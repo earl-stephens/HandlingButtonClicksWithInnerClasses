@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel implements ColorChangeListener {
 
 	private static final long serialVersionUID = 1L;
 	

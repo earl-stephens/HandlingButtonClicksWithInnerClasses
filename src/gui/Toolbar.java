@@ -48,7 +48,7 @@ public class Toolbar extends JToolBar {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Toolbar(MainPanel mainPanel) {
+	public Toolbar(ColorChangeListener colorChanger) {
 		/* mainPanel is passed in from the MainFrame object
 		 * and then passed to the red/blue button listener
 		 * objects' constructor
@@ -66,8 +66,9 @@ public class Toolbar extends JToolBar {
 		/* Replaced the above two methods with the two below, which
 		 * call a single class, and reduces duplication
 		 */
-		redButton.addActionListener(new ColorButtonListener(mainPanel, Color.red));
-		blueButton.addActionListener(new ColorButtonListener(mainPanel, Color.blue));
+		redButton.addActionListener(new ColorButtonListener(colorChanger, Color.red));
+		blueButton.addActionListener(new ColorButtonListener(colorChanger, Color.blue));
+		
 		add(redButton);
 		add(blueButton);
 	}
