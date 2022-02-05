@@ -55,6 +55,9 @@ public class Toolbar extends JToolBar {
 		final JButton redButton = new JButton("Red");
 		final JButton blueButton = new JButton("Blue");
 		
+		/* addActionListener expects an argument of a class
+		 * that implements the ActionListener interface
+		 */
 		redButton.addActionListener(new RedButtonListener(mainPanel));
 		blueButton.addActionListener(new BlueButtonListener(mainPanel));
 		
