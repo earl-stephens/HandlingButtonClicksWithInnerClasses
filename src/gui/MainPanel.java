@@ -11,4 +11,8 @@ public class MainPanel extends JPanel {
 	public MainPanel() {
 		setBackground(Color.green);
 	}
+	
+	public void changeColor(Color color) {
+		setBackground(color);
+	}
 }
