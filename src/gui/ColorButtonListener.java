@@ -6,15 +6,16 @@ import java.awt.event.ActionListener;
 
 public class ColorButtonListener implements ActionListener {
 
-	private MainPanel mainPanel;
+	//private MainPanel mainPanel;
+	private ColorChangeListener colorChanger;
 	private Color colors;
 	
-	public ColorButtonListener(MainPanel mainPanel, Color color) {
+	public ColorButtonListener(ColorChangeListener colorChanger, Color color) {
 		this.colors = color;
-		this.mainPanel = mainPanel;
+		this.colorChanger = colorChanger;
 	}
 	
 	@Override public void actionPerformed(ActionEvent e) {
-		mainPanel.changeColor(colors);
+		colorChanger.changeColor(colors);
 	}
 }
