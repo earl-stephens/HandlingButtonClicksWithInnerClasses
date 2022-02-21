@@ -71,6 +71,8 @@ public class Toolbar extends JToolBar {
 		blueButton.addActionListener(new BlueButtonListener(mainPanel));
 		replace with anonymous class
 		*/
+		
+		/* replace this with a lambda
 		redButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				colorChanger.changeColor(Color.red);
@@ -81,6 +83,16 @@ public class Toolbar extends JToolBar {
 				colorChanger.changeColor(Color.blue);
 			}
 		});
+		*/
+		
+		//layout for a lambda is () -> {}
+		redButton.addActionListener((e) -> {
+			colorChanger.changeColor(Color.red);
+		});
+		
+		//since there's only one parameter and one method,
+		//can simplify even more to 
+		blueButton.addActionListener(e -> colorChanger.changeColor(Color.blue));
 		
 		add(redButton);
 		add(blueButton);
