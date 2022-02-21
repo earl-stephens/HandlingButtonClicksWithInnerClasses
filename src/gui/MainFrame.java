@@ -12,6 +12,9 @@ public class MainFrame extends JFrame {
 		super(title);
 		
 		final MainPanel mainPanel = new MainPanel();
+		final Toolbar toolbar = new Toolbar();
+		
+		toolbar.setColorChanger(mainPanel);
 		System.out.println(mainPanel);
 		
 		//mainPanel.changeColor(Color.red);
@@ -22,7 +25,7 @@ public class MainFrame extends JFrame {
 		 * constructor as a way of passing a mainPanel object to the
 		 * Toolbar object.
 		 */
-		add(new Toolbar(mainPanel), BorderLayout.NORTH);
+		add(toolbar, BorderLayout.NORTH);
 		add(mainPanel, BorderLayout.CENTER);
 		
 		setSize(600, 400);

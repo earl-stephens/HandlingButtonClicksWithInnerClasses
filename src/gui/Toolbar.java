@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JToolBar;
 
+/*
 class RedButtonListener implements ActionListener {
 	
 	private MainPanel mainPanel;
@@ -15,7 +16,7 @@ class RedButtonListener implements ActionListener {
 	 * a parameter and assigns it to this instance variable,
 	 * which can then be used in the methods required.
 	 */
-	
+	/*
 	public RedButtonListener(MainPanel mainPanel) {
 		this.mainPanel = mainPanel;
 	}
@@ -26,7 +27,8 @@ class RedButtonListener implements ActionListener {
 		mainPanel.changeColor(Color.red);
 	}
 }
-
+*/
+/*
 class BlueButtonListener implements ActionListener {
 	
 	private MainPanel mainPanel;
@@ -41,12 +43,17 @@ class BlueButtonListener implements ActionListener {
 		mainPanel.changeColor(Color.blue);
 	}
 }
+*/
+
 
 public class Toolbar extends JToolBar {
 	
 	private static final long serialVersionUID = 1L;
+	private ColorChangeListener colorChanger;
 	
-	public Toolbar(MainPanel mainPanel) {
+	
+	
+	public Toolbar() {
 		/* mainPanel is passed in from the MainFrame object
 		 * and then passed to the red/blue button listener
 		 * objects' constructor
@@ -58,10 +65,28 @@ public class Toolbar extends JToolBar {
 		/* addActionListener expects an argument of a class
 		 * that implements the ActionListener interface
 		 */
+		
+		/*
 		redButton.addActionListener(new RedButtonListener(mainPanel));
 		blueButton.addActionListener(new BlueButtonListener(mainPanel));
+		replace with anonymous class
+		*/
+		redButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				colorChanger.changeColor(Color.red);
+			}
+		});
+		blueButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				colorChanger.changeColor(Color.blue);
+			}
+		});
 		
 		add(redButton);
 		add(blueButton);
+	}
+	
+	public void setColorChanger(ColorChangeListener colorChanger) {
+		this.colorChanger = colorChanger;
 	}
 }
