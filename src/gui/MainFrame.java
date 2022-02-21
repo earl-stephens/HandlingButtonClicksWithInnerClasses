@@ -12,6 +12,7 @@ public class MainFrame extends JFrame {
 		super(title);
 		
 		final MainPanel mainPanel = new MainPanel();
+		System.out.println(mainPanel);
 		
 		//mainPanel.changeColor(Color.red);
 		
